@@ -1,0 +1,92 @@
+/* Style global */
+body {
+    font-family: Arial, sans-serif; /* Définit la police de base */
+    background-color: #f4f4f4; /* Couleur de fond gris clair */
+    display: flex; /* Utilisation de flexbox pour centrer le contenu */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+}
+
+h2 {
+    text-align: center; /* Centre le titre */
+}
+
+/* Style de la page index.php */
+.container_main {
+    background: white; /* Fond blanc */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère autour du conteneur */
+    width: 800px; /* Largeur du conteneur */
+    text-align: center; /* Centre le texte */
+}
+
+.header {
+    margin-left: -600px; /* Décale l'élément vers la gauche (peut poser problème sur certains écrans) */
+}
+
+/* Style du bouton de connexion */
+.button_login {
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: 10px; /* Espacement intérieur */
+    background: #007bff; /* Couleur bleue */
+    color: white; /* Texte en blanc */
+    border: none; /* Supprime la bordure */
+    cursor: pointer; /* Change le curseur en main au survol */
+    border-radius: 5px; /* Coins arrondis */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+/* Changement de couleur au survol */
+.button_login:hover {
+    background: #0056b3; /* Bleu plus foncé */
+    text-decoration: none; /* Assure que le soulignement reste désactivé */
+}
+
+/* Style des formulaires */
+.container {
+    background: white; /* Fond blanc */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    width: 300px; /* Largeur du formulaire */
+    text-align: center; /* Centre le texte */
+}
+
+/* Style des champs de saisie */
+input {
+    width: 100%; /* Prend toute la largeur */
+    padding: 10px; /* Espacement intérieur */
+    margin: 10px 0; /* Marge entre les champs */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+/* Style des boutons */
+button {
+    width: 100%; /* Prend toute la largeur */
+    padding: 10px; /* Espacement intérieur */
+    background: #007bff; /* Couleur bleue */
+    color: white; /* Texte blanc */
+    border: none; /* Supprime la bordure */
+    cursor: pointer; /* Change le curseur en main au survol */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+/* Changement de couleur au survol */
+button:hover {
+    background: #0056b3; /* Bleu plus foncé */
+}
+
+/* Style des messages d'erreur */
+.error {
+    color: red; /* Texte rouge */
+    font-size: 14px; /* Taille de police réduite */
+}
+
+/* Style des messages de succès */
+.success {
+    color: green; /* Texte vert */
+    font-size: 14px; /* Taille de police réduite */
+}
