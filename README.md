@@ -3,11 +3,7 @@
 ## Réaliser par DUPUIS Brian et MAZURIER Eve
 ## Description
 
-Ce projet a été réalisé dans le but de créer un site simple permettant aux utilisateurs de se connecter à l'aide de leurs identifiants. L'objectif principal de ce projet était d'identifier et de résoudre deux problèmes spécifiques :
-
-1. **Un défaut de mise en page** 
-2. **Une faille de sécurité** : dans le système de connexion de l'utilisateur
-   
+Ce projet a été réalisé dans le but de créer un site simple permettant aux utilisateurs de se connecter à l'aide de leurs identifiants. 
 
 ### Date de réalisation :
 - **Date** : 25 février 2025
@@ -32,7 +28,7 @@ Le projet comporte les éléments suivants :
 
 1. Clonez ce repository sur votre machine locale :
    ```bash
-   git clone https://github.com/mazuriereve/maintenance_applicative.git
+   git clone https://github.com/RavenJB/R6.06_PHP_Bug_Correction.git
    ```
 
 2. Une fois le fichier créer , aller dans votre base de données sur votre serveur local et vérifier le fichier connexion.php et modifier les logins si nécessaires.
