@@ -4,16 +4,21 @@ include 'connexion.php'; // Inclusion du fichier de connexion à la base de donn
 
 $message = ""; // Variable pour stocker les messages d'erreur ou de succès
 
+
+//Corrige la faille qui permettait de se connecter juste avec le bon mot de passe et un mauvais email
+
 // Vérifie si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email_user = trim($_POST['email_user']); // Récupère et nettoie l'email entré
     $mdp = trim($_POST['mdp']); // Récupère et nettoie le mot de passe entré
 
-    // Vérifie si le champ mot de passe est vide
-    if (empty($mdp)) {
+    // Vérifie si les champs email et mot de passe sont vides
+    if (empty($email_user) || empty($mdp)) {
         $message = "<p class='error'>Veuillez remplir tous les champs.</p>";
     } else {
-        // Récupère le premier utilisateur trouvé dans la base de données
-        $stmt = $pdo->query("SELECT * FROM users LIMIT 1");
+        // Prépare une requête pour récupérer l'utilisateur avec l'email fourni
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE email_user = ?");
+        $stmt->execute([$email_user]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC); // Récupère le résultat sous forme de tableau associatif
 
         // Vérifie si un utilisateur a été trouvé et si le mot de passe correspond
@@ -23,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: index.php"); // Redirige vers la page d'accueil
             exit(); // Stoppe l'exécution du script après la redirection
         } else {
-            $message = "<p class='error'>Mot de passe incorrect.</p>";
+            $message = "<p class='error'>Email ou mot de passe incorrect.</p>";
         }
     }
 }
@@ -42,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Connexion</h2>
         <?= $message; ?> <!-- Affichage du message d'erreur ou de succès -->
         <form action="" method="POST">
-            <input type="email" name="email_user" placeholder="Email"> <!-- Champ email -->
+            <input type="email" name="email_user" placeholder="Email" required> <!-- Champ email -->
             <input type="password" name="mdp" placeholder="Mot de passe" required> <!-- Champ mot de passe -->
             <button type="submit">Se connecter</button> <!-- Bouton de connexion -->
         </form>
