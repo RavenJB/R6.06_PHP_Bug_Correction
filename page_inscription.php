@@ -3,6 +3,7 @@ include 'connexion.php'; // Inclusion du fichier de connexion à la base de donn
 
 $message = ""; // Variable pour stocker les messages d'erreur ou de succès
 
+
 // Vérifie si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom_user = trim($_POST['nom_user']); // Récupère et nettoie le nom d'utilisateur
